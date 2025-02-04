@@ -1,0 +1,24 @@
+# PyCharm
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+.venv/
+.env/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Datasets and large files
+data/*.csv
+data/*.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
