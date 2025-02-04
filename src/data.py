@@ -7,8 +7,8 @@ class DataLoader:
 
     def load_data(self):
         """Loads dataset and selects relevant columns."""
-        df = pd.read_csv(self.file_path)
-        df = df[['title', 'genres', 'overview']]
+        df = pd.read_csv(self.file_path, low_memory=False)
+        df = df[['name', 'genres', 'overview']]
         df.dropna(inplace=True)
         df['genres'] = df['genres'].str.lower()
         df['overview'] = df['overview'].str.lower()
