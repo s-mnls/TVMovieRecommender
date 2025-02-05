@@ -18,9 +18,9 @@ class TMDBClient:
         }
 
     def fetch_trending_data(self, media_type, max_results=1000):
-        """Fetches trending movies or TV shows using the generic fetch_data method."""
+        """Fetches trending movies or TV shows."""
         url = f"https://api.themoviedb.org/3/trending/{media_type}/day?language=en-US"
-        """Generic method to fetch paginated data from TMDB."""
+
         all_results = []
         page = 1
         wait_time = 1  # Initial wait time for rate limiting
