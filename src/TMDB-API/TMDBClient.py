@@ -5,11 +5,16 @@ import pandas as pd
 import requests
 from dotenv import load_dotenv
 
+def get_data_path(filename):
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
+    directory = os.path.join(base_dir, "..", "data", filename)
+    return str(directory)
 
 class TMDBClient:
     def __init__(self):
+        API_KEY = get_data_path(".env")
         # Load environment variables from .env file
-        load_dotenv()
+        load_dotenv(API_KEY)
         # Get the token from the environment
         self.TMDB_BEARER_TOKEN = os.getenv("TMDB_BEARER_TOKEN")
         self.headers = {
