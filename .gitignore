@@ -9,7 +9,7 @@ __pycache__/
 # Virtual environments
 venv/
 .venv/
-.env/
+data/.env/
 
 # Logs and temp files
 *.log
@@ -25,5 +25,5 @@ Thumbs.db
 
 # Ignore config file with sensitive info (optional)
 src/config.py
-/.env
+/data/.env
 /src/api-testing.py
