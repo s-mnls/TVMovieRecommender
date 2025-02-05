@@ -9,7 +9,7 @@ __pycache__/
 # Virtual environments
 venv/
 .venv/
-.env/
+.env  # Ignore the .env file, not a directory
 
 # Logs and temp files
 *.log
@@ -22,3 +22,6 @@ data/*.json
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Ignore config file with sensitive info (optional)
+src/config.py
