@@ -1,23 +1,16 @@
 import pandas as pd
 import os
-from TMDBClient import TMDBClient
+from TMDBClient import TMDBClient, get_data_path
 
 class DataProcessor:
     def __init__(self):
         self.genre_data = None
 
-    # Finds
-    @staticmethod
-    def get_data_path(filename):
-        base_dir = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
-        directory = os.path.join(base_dir, "..", "data", filename)
-        return directory
-
     # Combines genres from both movie and tv into one csv and loads into DataProcessor Object
     def load_genres(self):
         try:
             # Checks for any preloaded genres.csv file (may implement caching system later)
-            directory = self.get_data_path("genres.csv")
+            directory = get_data_path("genres.csv")
             df = pd.read_csv(directory)
             self.genre_data = dict(zip(df["id"], df["name"]))
         except (FileNotFoundError, pd.errors.EmptyDataError):
