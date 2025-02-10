@@ -23,7 +23,7 @@ class DataProcessor:
             self.genre_data = genre_map
 
             # Stores dictionary into a DataFrame so it can be exported as a csv
-            pd.DataFrame(list(genre_map.items()), columns=["id", "name"]).to_csv("genres.csv", index=False)
+            pd.DataFrame(list(genre_map.items()), columns=["id", "name"]).to_csv(get_data_path(""), index=False)
 
     # Takes input of array full of genre ids and maps them to the genre names using HashMap
     def map_genres(self, genre_ids):
