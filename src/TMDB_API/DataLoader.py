@@ -1,6 +1,8 @@
 import pandas as pd
 
 from src.TMDB_API import *
+from src.TMDB_API.TMDBClient import get_data_path
+
 
 class DataLoader:
     def __init__(self):
@@ -12,15 +14,15 @@ class DataLoader:
     def load_trending_data(self, media_type):
         """Loads trending data and processes genre mappings."""
         data = self.client.fetch_trending_data(media_type)
-
         if not data:
             return None
 
+        self.processor.load_genres()
         df = pd.DataFrame(data)
         df["genre_names"] = df["genre_ids"].apply(self.processor.map_genres)
 
-        df.to_csv(f"titles-{media_type}.csv", index=False)
-        print(f"✅ Saved {len(df)} {media_type} records to titles-{media_type}.csv")
+        df.to_csv(get_data_path("")+"/"+f"titles-{media_type}.csv", index=False)
+        print(f"Saved {len(df)} {media_type} records to titles-{media_type}.csv")
 
         if media_type == "movie":
             self.movie_df = df
