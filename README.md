@@ -8,7 +8,7 @@ A machine learning-based recommendation system for TV shows or movies.
 
 ## Introduction
 
-TVRecommender is a Python-based application that provides personalized TV show or movie recommendations using machine learning techniques. It processes TV show or movie data, vectorizes textual information, and suggests similar shows based on user input.
+TVMovieRecommender is a Python-based application that provides personalized TV show or movie recommendations using machine learning techniques. It processes TV show or movie data, vectorizes textual information, and suggests similar shows based on user input.
 
 ## Features
 
