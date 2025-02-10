@@ -8,8 +8,17 @@ class DataLoader:
     def __init__(self):
         self.client = TMDBClient()
         self.processor = DataProcessor()
-        self.movie_df = None
-        self.tv_df = None
+        try:
+            file_path = get_data_path('titles-movie.csv')
+            self.movie_df = pd.read_csv(file_path, low_memory=False, on_bad_lines='skip')
+        except FileNotFoundError:
+            self.load_filtered_data('movie')
+
+        try:
+            file_path = get_data_path('titles-tv.csv')
+            self.tv_df = pd.read_csv(file_path, low_memory=False, on_bad_lines='skip')
+        except FileNotFoundError:
+            self.load_filtered_data('tv')
 
     def load_trending_data(self, media_type):
         """Loads trending data and processes genre mappings."""
