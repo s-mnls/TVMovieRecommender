@@ -7,16 +7,24 @@ from dotenv import load_dotenv
 
 def get_data_path(filename):
     base_dir = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
-    directory = os.path.join(base_dir, "..", "data", filename)
+    directory = os.path.join(base_dir, "..", "..", "data", filename)
     return str(directory)
 
 class TMDBClient:
     def __init__(self):
-        API_KEY = get_data_path(".env")
+        env_path = get_data_path(".env")
+
+        if not os.path.exists(env_path):
+            raise FileNotFoundError(f".env not found at {env_path}")
+
         # Load environment variables from .env file
-        load_dotenv(API_KEY)
+        load_dotenv(env_path)
         # Get the token from the environment
         self.TMDB_BEARER_TOKEN = os.getenv("TMDB_BEARER_TOKEN")
+
+        if not self.TMDB_BEARER_TOKEN:
+            raise ValueError("TMDB_BEARER_TOKEN not found in .env")
+
         self.headers = {
             "accept": "application/json",
             "Authorization": f"Bearer {self.TMDB_BEARER_TOKEN}"
