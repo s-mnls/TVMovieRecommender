@@ -30,9 +30,9 @@ class TMDBClient:
             "Authorization": f"Bearer {self.TMDB_BEARER_TOKEN}"
         }
 
-    # Complies first 1000 trending entries depending on media_type
+    # Complies first 5000 trending entries depending on media_type
     # Adapts to pagination from API and complies with 50 request limit per second with exponential backoff
-    def fetch_trending_data(self, media_type, max_results=1000):
+    def fetch_trending_data(self, media_type, max_results=5000):
         """Fetches trending movies or TV shows."""
         url = f"https://api.themoviedb.org/3/trending/{media_type}/day?language=en-US"
 
