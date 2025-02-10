@@ -1,5 +1,5 @@
 import pandas as pd
-from TMDBClient import TMDBClient, get_data_path
+from src.TMDB_API.TMDBClient import TMDBClient, get_data_path
 
 class DataProcessor:
     def __init__(self):

@@ -1,7 +1,7 @@
 import pandas as pd
 
-from TMDBClient import TMDBClient
-from DataProcessor import DataProcessor
+from src.TMDB_API import *
+
 class DataLoader:
     def __init__(self):
         self.client = TMDBClient()
