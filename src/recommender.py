@@ -19,6 +19,4 @@ class Recommender:
         tv_show_indices = [i[0] for i in similarity_scores]
         return self.df[self.filter_type].iloc[tv_show_indices].tolist()
 
-# Usage:
-# recommender = Recommender(df, tfidf_matrix)
-# print(recommender.recommend("Breaking Bad", 5))
+
