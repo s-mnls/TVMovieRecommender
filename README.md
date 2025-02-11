@@ -5,6 +5,8 @@ A machine learning-based recommendation system for TV shows or movies.
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Features](#features)
+- [Future Features/Goals](#future-featuresgoals)
 
 ## Introduction
 
