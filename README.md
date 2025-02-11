@@ -17,6 +17,12 @@ TVMovieRecommender is a Python-based application that provides personalized TV s
 - **Vectorization**: Converts text data into numerical vectors using TF-IDF.
 - **Recommendation**: Suggests TV shows or movies similar to a user-provided title.
 
+## Future Features/Goals
+
+- **Caching**: Ideally, I would like the program to recognize when the data becomes outdated, and replace any .csv files that need updating.
+- **Language Preferences**: I would like to implement a feature that places a filter on exclusively English media or exclusively Japanese media, etc.
+- **Deployment/UI**: I want to try and have this on some sort of graphical interface or website to play around and test on.
+
 ## Attribution
 
 This project uses data from [The Movie Database (TMDb)](https://www.themoviedb.org/), but it is **not** endorsed or certified by TMDb.
